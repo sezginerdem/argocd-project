@@ -35,7 +35,7 @@ node {
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                        sh "git push -f origin main https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/argocd-project-kubernetesmanifest.git"
+                        sh "git push -f origin main https://github.com/sezginerdem/argocd-project.git"
       }
     }
   }
