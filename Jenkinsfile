@@ -35,7 +35,7 @@ node {
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                        sh "git push -f https://github.com/sezginerdem/argocd-project.git"
+                        sh "git push -f https://github.com/sezginerdem/argocd-project.git HEAD:main"
       }
     }
   }
