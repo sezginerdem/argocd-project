@@ -22,7 +22,7 @@ node {
         }
     }
     
-    stage('Update GIT') {
+    stage('Update GitHub Repository') {
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'sezgin_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
@@ -33,6 +33,7 @@ node {
                         sh "cat deployment.yaml"
                         sh "sed -i 's+drsezginerdem/test-gitops.*+drsezginerdem/test-gitops:${DOCKERTAG}+g' deployment.yaml"
                         sh "cat deployment.yaml"
+                        sh "git fetch"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/argocd-project-kubernetesmanifest.git HEAD:main"
