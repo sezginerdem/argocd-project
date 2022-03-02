@@ -27,8 +27,8 @@ node {
         }
     }
     
-    // stage('Trigger ManifestUpdate') {
-    //             echo "triggering test-gitops-updatemanifest job"
-    //             build job: 'test-gitops-updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
-    //     }
+    stage('Trigger ManifestUpdate') {
+                echo "triggering test-gitops-updatemanifest job"
+                build job: 'test-gitops-updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+        }
 }
