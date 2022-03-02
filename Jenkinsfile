@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("sezginerdem/test")
+       app = docker.build("drsezginerdem/test-gitops")
     }
 
     stage('Test image') {
@@ -19,7 +19,7 @@ node {
             sh 'echo "Tests passed"'
         }
     }
-    stage('Test image') {
+    stage('Docker Login') {
   
 
         app.inside {
