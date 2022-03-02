@@ -19,13 +19,6 @@ node {
             sh 'echo "Tests passed"'
         }
     }
-    // stage('Docker Login') {
-  
-
-    //     app.inside {
-    //         sh 'docker login -u drsezginerdem -p 2283156473'
-    //     }
-    // }
 
     stage('Push image') {
         
