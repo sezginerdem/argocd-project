@@ -15,7 +15,8 @@ node {
         }
     }
 
-    stage('Push image Ti DockerHub') {
+    stage('Push image to DockerHub') {
+        
         docker.withRegistry('https://registry.hub.docker.com', 'sezgin_dockerhub') {
             app.push("${env.BUILD_NUMBER}")
         }
