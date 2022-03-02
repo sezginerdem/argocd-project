@@ -22,7 +22,10 @@ node {
 
     stage('Push image') {
         
-        docker.withRegistry('https://registry.hub.docker.com', 'sezgin_dockerhub') {
+        // This step should not normally be used in your script. Consult the inline help for details.
+withDockerRegistry(credentialsId: 'sezgin_dockerhub', url: 'https://hub.docker.com/') {
+    // some block
+} {
             app.push("${env.BUILD_NUMBER}")
         }
     }
