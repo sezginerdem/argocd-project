@@ -9,11 +9,11 @@ node {
        app = docker.build("drsezginerdem/test-gitops:latest")
     }
 
-    stage('Test image') {
-        app.inside {
-            sh 'echo "Tests passed"'
-        }
-    }
+    // stage('Test image') {
+    //     app.inside {
+    //         sh 'echo "Tests passed"'
+    //     }
+    // }
 
     stage('Push image to DockerHub') {
         
