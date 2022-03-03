@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: flaskdemo
   name: flaskdemo
@@ -10,29 +9,13 @@ spec:
   selector:
     matchLabels:
       app: flaskdemo
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: flaskdemo
     spec:
       containers:
-      - image: drsezginerdem/test-gitops:65
+      - image: drsezginerdem/test-gitops:104
         name: flaskdemo
-        resources: {}
-status: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: lb-service
-  labels:
-    app: lb-service
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 5000
-  selector:
-    app: flaskdemo
+        ports:
+        - containerPort: 80
