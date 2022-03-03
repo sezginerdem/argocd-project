@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build image') {
-       app = docker.build("drsezginerdem/test-gitops")
+       app = docker.build("drsezginerdem/test-gitops:latest")
     }
 
     stage('Test image') {
