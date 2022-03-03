@@ -4,11 +4,11 @@ metadata:
   name: myapp-argo-application
   namespace: argocd
 spec:
-  project: default
+  project: default #every application belongs to a single project, if unspecified, an application belongs `defualt` project
   source:
-    repoURL: https://github.com/sezginerdem/argocd-project.git
+    repoURL: https://github.com/sezginerdem/argocd-project.git #git repo
     targetRevision: HEAD
-    path: ./
+    path: kubernetes_objects
   destination:
     server: https://kubernetes.default.svc
     namespace: default
