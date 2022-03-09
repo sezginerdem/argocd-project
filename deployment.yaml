@@ -15,7 +15,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: drsezginerdem/test-gitops:104
+      - image: drsezginerdem/test-gitops:110
         name: flaskdemo
         ports:
         - containerPort: 80
